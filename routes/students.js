@@ -4,7 +4,11 @@ const router = express.Router()
 
 const student = require('../models/student')
 
+<<<<<<< HEAD
+// const fs = require('express-fileupload')
+=======
 const fs = require('express-fileupload')
+>>>>>>> b181672a2c9c4728141e6f606969f712d535c01e
 
 const auth = (request, response, next) => {
 	if (!request.user) {
@@ -30,6 +34,8 @@ router.get('/datatable', auth, (request, response) => {
 
 router.post('/create', auth, async (request, response) => {
 	const newStudent = new student(request.body)
+<<<<<<< HEAD
+=======
 	const saveImage= false
 	let path = '/public/uploads/'
 	// console.log(request.files)
@@ -43,6 +49,7 @@ router.post('/create', auth, async (request, response) => {
 	// if(saveImage) {
 	// 	newStudent.image = path
 	// }
+>>>>>>> b181672a2c9c4728141e6f606969f712d535c01e
 	newStudent.save(function(err, result) {
 		if(err) {
 			response.status(422).json(err)
@@ -102,4 +109,13 @@ router.post('/delete/:id', auth, (request, response) => {
 		}
 	})
 })
+<<<<<<< HEAD
+
+router.get('/image/:image', (request, response) => {
+	const path = __dirname.substr(0, __dirname.lastIndexOf('\\'))
+	response.sendFile(path + '/public/uploads/' + request.params.image)
+});
+
+=======
+>>>>>>> b181672a2c9c4728141e6f606969f712d535c01e
 module.exports = router

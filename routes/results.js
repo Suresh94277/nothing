@@ -157,6 +157,10 @@ router.get('/feedbacks/:number', auth, (req, res) => {
 })
 
 router.post('/feedback-save', auth, (req, res) => {
+<<<<<<< HEAD
+   
+=======
+>>>>>>> b181672a2c9c4728141e6f606969f712d535c01e
     const feed = new feedback(req.body)
     feed.user_id = req.user.id
     feed.user = req.user

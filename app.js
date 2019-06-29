@@ -11,7 +11,11 @@ app.use(require('body-parser').urlencoded({
   extended: true
 }))
 
+<<<<<<< HEAD
+// app.use(require('express-fileupload')())
+=======
 app.use(require('express-fileupload')())
+>>>>>>> b181672a2c9c4728141e6f606969f712d535c01e
 
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*')
@@ -94,7 +98,11 @@ app.use('/api/teachers', teacherRouter)
 
 
 app.post('/setup', (request, response) => {
+<<<<<<< HEAD
+	user.countDocuments({email: 'admin@management.com'}, async (err, result) => {
+=======
 	user.countDocuments(async (err, result) => {
+>>>>>>> b181672a2c9c4728141e6f606969f712d535c01e
 		if(result === 0) {
 			const Admin = new user({
 				name	: 'Admin',

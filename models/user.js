@@ -7,7 +7,12 @@ const userSchema = new mongoose.Schema({
 	phone	: String,
 	password: String,
 	role	: String,
+<<<<<<< HEAD
+	notifications: Number,
+	image   : String,
+=======
 	notifications: Number
+>>>>>>> b181672a2c9c4728141e6f606969f712d535c01e
 }, { timestamp: true })
 
 userSchema.pre('save', function(next) {
