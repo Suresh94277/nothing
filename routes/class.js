@@ -33,7 +33,11 @@ router.get('/blood-group', (request, response) => {
 })
 
 router.get('/subjects', (request, response) => {
+
     response.json(['English', 'Nepali', 'Science', 'Social', 'Math', 'health', 'Acccount', 'Computer'])
+
+    response.json(['Englissh', 'Nepali', 'Science', 'Social', 'Math'])
+
 })
 
 
