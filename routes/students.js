@@ -4,7 +4,13 @@ const router = express.Router()
 
 const student = require('../models/student')
 
+
 // const fs = require('express-fileupload')
+
+// const fs = require('express-fileupload')
+
+// const fs = require('express-fileupload')
+
 
 const auth = (request, response, next) => {
 	if (!request.user) {
@@ -14,11 +20,11 @@ const auth = (request, response, next) => {
 	}
 }
 
-router.get('/', auth, (request, response) => {
+router.get('/',  auth,(request, response) => {
 	response.json({message: 'You will get student informations'})
 })
 
-router.get('/datatable', auth, (request, response) => {
+router.get('/datatable', auth,  (request, response) => {
 	student.find().exec(function(err, students) {
 		if(err) {
 			response.status(400).json({message: 'failed to load'})
@@ -28,8 +34,23 @@ router.get('/datatable', auth, (request, response) => {
 	})
 })
 
-router.post('/create', auth, async (request, response) => {
+router.post('/create', auth,  async (request, response) => {
 	const newStudent = new student(request.body)
+	console.log(request.body)
+	const saveImage= false
+	let path = '/public/uploads/'
+	// console.log(request.files)
+	// if(Object.keys(request.files).length) {
+	// 	// const image = request.files.image
+	// 	// path += [image.md5, image.name].join('_')
+	// 	// image.mv(path, (err) => {
+	// 	// 	if(err) saveImage = true
+	// 	// })
+	// }
+	// if(saveImage) {
+	// 	newStudent.image = path
+	// }
+
 	newStudent.save(function(err, result) {
 		if(err) {
 			response.status(422).json(err)
@@ -90,9 +111,11 @@ router.post('/delete/:id', auth, (request, response) => {
 	})
 })
 
+
 router.get('/image/:image', (request, response) => {
 	const path = __dirname.substr(0, __dirname.lastIndexOf('\\'))
 	response.sendFile(path + '/public/uploads/' + request.params.image)
 });
+
 
 module.exports = router

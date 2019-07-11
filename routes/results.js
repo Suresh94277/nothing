@@ -158,8 +158,6 @@ router.get('/feedbacks/:number', auth, (req, res) => {
 
 router.post('/feedback-save', auth, (req, res) => {
 
-   
-
     const feed = new feedback(req.body)
     feed.user_id = req.user.id
     feed.user = req.user

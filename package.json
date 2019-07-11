@@ -7,25 +7,19 @@
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-<<<<<<< HEAD
-=======
-    "express-fileupload": "^1.1.5",
->>>>>>> b181672a2c9c4728141e6f606969f712d535c01e
     "express-session": "^1.16.2",
     "express-validator": "^5.3.1",
     "faker": "^4.1.0",
+    "jest": "^24.8.0",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "mongoose": "^5.6.0",
-<<<<<<< HEAD
     "multer": "^1.4.1",
-=======
->>>>>>> b181672a2c9c4728141e6f606969f712d535c01e
     "nodemon": "^1.19.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC"
